@@ -1,3 +1,5 @@
+# coding: utf-8
+
 puts "Anna nimi: "
 nimi = gets.chomp
 

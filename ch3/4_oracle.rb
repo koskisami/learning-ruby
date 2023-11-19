@@ -1,3 +1,5 @@
+# coding: utf-8
+
 puts "Oraakkeli vastaa kyllä/ei-muodossa"
 puts "Kirjoita kysymyksesi Oraakkelille:"
 kysymys = gets.chomp

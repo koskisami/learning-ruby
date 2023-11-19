@@ -1,3 +1,5 @@
+# coding: utf-8
+
 print "Valitse x-akselin arvo väliltä 0-9: "
 x = gets.chomp.to_i
 

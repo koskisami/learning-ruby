@@ -1,21 +1,47 @@
-puts "Oraakkeli vastaa kyllä/ei-muodossa"
-puts "Kirjoita kysymyksesi Oraakkelille:"
-kysymys = gets.chomp
+# coding: utf-8
 
-puts "Kysymyksesi oli: #{kysymys}"
-puts "Tähän Oraakkeli vastasi:"
+computer = 0
+player = 0
+okay = 0
 
-rng = rand(100)
+while okay == 0
+  puts '1: Torakka 2: Jalka 3: Ydinpommi 4: lopeta'
+  puts 'Valitse (1-4):'
+  selection = gets.to_i
 
-case rng
-when 0..19
-  print "Ei missään nimessä!"
-when 20..44
-  print "Ei varmaankaan"
-when 45..54
-  print "En osaa sanoa."
-when 55..79
-  print "Luultavasti kyllä."
-else
-  print "Ehdottomasti kyllä."
+  rng = rand(4)
+  if (selection == 1) && (rng == 0)
+    print('Valitsitte saman, tasapeli.')
+  elsif (selection == 1) && (rng == 1)
+    print "Valitsit torakan, tietokone valitsi jalan.\n"
+    print 'Tietokone voitti.'
+    computer += 1
+  elsif (selection == 1) && (rng == 2)
+    print "Valitsit torakan, tietokone valitsi ydinpommin.\n"
+    print 'Voitit!'
+    player += 1
+  elsif (selection == 2) && (rng == 0)
+    print "Valitsit jalan, tietokone valitsi torakan.\n"
+    print 'Voitit!'
+    player += 1
+  elsif (selection == 2) && (rng == 1)
+    print 'Valitsitte saman, tasapeli.'
+  elsif (selection == 2) && (rng == 2)
+    print "Valitsit jalan, tietokone valitsi ydinpommin.\n"
+    print 'Tietokone voitti.'
+    computer += 1
+  elsif (selection == 3) && (rng == 0)
+    print "Valitsit ydinpommin, tietokone valitsi torakan.\n"
+    print 'Tietokone voitti.'
+    computer += 1
+  elsif (selection == 3) && (rng == 1)
+    print "Valitsit ydinpommin, tietokone valitsi jalan.\n"
+    print 'Voitit'
+    player += 1
+  elsif (selection == 3) && (rng == 2)
+    print 'Valitsitte saman, tasapeli.'
+  elsif selection == 4
+    break
+  end
+  puts "\nPeli on pelaaja #{player} : tietokone #{computer}"
 end
