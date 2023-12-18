@@ -5,13 +5,15 @@ def palindromecheck(text)
     text = text.gsub(/\s+/, "")
     text = text.downcase
 
-    if originaltext.length < 4
-        "#{originaltext} ei ole kelvollinen sana."
-    elsif text.reverse.downcase == text.downcase
+	if originaltext.length <= 5
+		puts "#{originaltext} ei ole kelvollinen sana."
+		return
+	end
+    if text.reverse.downcase == text.downcase
         puts "#{originaltext} on palindromi."
-    else
+	else
         puts "#{originaltext} ei ole palindromi; se on väärinpäin #{originaltext.reverse}."
-    end
+	end
 end
 
 repeat = true
@@ -29,4 +31,4 @@ while repeat
     else
         break
     end
-  end
+end
